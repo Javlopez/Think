@@ -35,6 +35,12 @@ define("__APP__",    realpath(__PATH__.$application).DIRECTORY_SEPARATOR);
 define("__SYSTEM__", realpath(__PATH__.$system).DIRECTORY_SEPARATOR);
 define("__MODULES__",realpath(__PATH__.$modules).DIRECTORY_SEPARATOR);
 
+require __SYSTEM__."core/Autoloader.php";
+
+spl_autoload_register(array('Autoloader','loader'));
+
+echo Request::application()->execute();
 
 
-require __SYSTEM__."core.php";
+
+
