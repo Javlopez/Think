@@ -39,7 +39,7 @@ require __SYSTEM__."core/Autoloader.php";
 
 spl_autoload_register(array('Autoloader','loader'));
 
-echo Request::application()->execute();
+Request::application()->execute()->render();
 
 
 
